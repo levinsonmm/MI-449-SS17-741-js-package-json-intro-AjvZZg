@@ -3,75 +3,73 @@
 
 body {
   margin: 0;
-  background-color: #333;
+  background-color: $secondary-color;
   color: #fff;
-}
 
-table.menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-top: 0;
-  border-left: 0;
-  border-right: $border;
-  border-bottom: $border;
-  border-bottom-right-radius: 6px;
-  background-color: #777;
-  box-shadow: $shadow;
-  font-family: 'Courier New', Courier, monospace;
-}
+  table.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: $border;
+    border-bottom: $border;
+    border-bottom-right-radius: 6px;
+    background-color: lighten($secondary-color, 27%);
+    box-shadow: $shadow;
+    font-family: $font;
 
-table.menu h1 {
-  margin: 0 10px;
-  font-size: 20px;
-}
+    td {
+      text-align: center;
 
-table.menu td {
-  text-align: center;
-}
+      h1 {
+        margin: 0 10px;
+        font-size: 20px;
+      }
 
-table.menu button {
-  width: 80%;
-  background-color: lighten($primary-color, 6%);
-  color: #111;
-  text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: normal;
-  font-size: 12px;
-  border: $border;
-  transition: width 0.5s, background-color 0.5s;
-  border-radius: 3px;
-}
+      .label {
+        width: 80px;
+      }
 
-table.menu button:hover {
-  cursor: pointer;
-  background-color: lighten($primary-color, 10%);
-  width: 85%;
-  transition: width 0.5s, background-color 0.5s;
-}
+      .label,
+      .result {
+        text-align: right;
+      }
+    }
 
-table.menu button:active,
-table.menu button:focus {
-  outline: none;
-}
+    button {
+      width: 80%;
+      background-color: lighten($primary-color, 6%);
+      color: #111;
+      text-align: center;
+      font-weight: normal;
+      font-size: 12px;
+      border: $border;
+      transition: width $transition;
+      border-radius: 3px;
 
-table.menu td.label {
-  width: 80px;
-}
+      &:hover {
+        cursor: pointer;
+        background-color: lighten($primary-color, 10%);
+        width: 85%;
+      }
 
-table.menu td.label,
-table.menu td.result {
-  text-align: right;
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+  }
 }
 
 .clicky {
   position: absolute;
   border-radius: 50%;
   background-color: $primary-color;
-  border: 1px solid $border-color;
+  border: $border;
   box-shadow: $shadow;
-}
 
-.clicky:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
